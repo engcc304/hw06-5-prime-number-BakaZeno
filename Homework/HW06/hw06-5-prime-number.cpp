@@ -14,3 +14,30 @@
     Output:
         97 89 83 79 73 71 67 61 59 53 47 43 41 37 31 29 23 19 17 13 11 7 5 3 2
 */
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    
+    printf("Enter number :\n");
+    scanf("%d", &number);
+    
+    printf("Output:\n");
+    
+    for (int i = number - 1; i >= 2; i--) {
+        bool is_prime = true;
+        
+        for (int j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                is_prime = false;
+                break;
+            }
+        }
+        if (is_prime) {
+            printf("%d ", i);
+        }
+    }
+    
+    printf("\n");
+}
